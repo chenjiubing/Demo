@@ -18,6 +18,9 @@
 		.FixedL{ width: 3.125rem; height: 1.5625rem; background: yellow; }
 		.FixedR{ -webkit-box-flex: 1; background: red; }
 
+		/*摇一摇*/
+		.Shake{ display: block; width: 3.125rem; height: 3.125rem; margin: 20px auto; border: 1px solid #000; background: red; }
+
 	</style>
 </head>
 <body>
@@ -35,5 +38,33 @@
 	<div class="FixedL"></div>
 	<div class="FixedR"></div>
 </div>
+
+<!-- 摇一摇 -->
+<div class="Shake">摇一摇</div>
+
 </body>
+
+<script type="text/javascript">
+	var x,y,z,lastX,lastY,lastZ;
+	var num=30;
+	if(window.DeviceMotionEvent){
+		window.addEventListener('devicemotion',function(ev){
+			var acceleration=ev.accelerationIncludingGravity;
+				x=acceleration.x;
+				y=acceleration.y;
+				z=acceleration.z;
+			if(Math.abs(x-lastX)>num || Math.abs(y-lastY)>num || Math.abs(z-lastZ)>num)
+			{
+				var Shake=document.querySelector('.Shake');
+				Shake.style.background='rgb('+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+','+parseInt(Math.random()*256)+')';
+				Shake.innerHTML='手机摇动了';
+			}
+			
+			lastX=x;
+			lastY=y;
+			lastZ=z;
+		},false);
+	}
+</script>
+
 </html>
