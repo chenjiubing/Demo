@@ -15,11 +15,11 @@
 
 		/*固宽*/
 		.Fixedwidth{ display: -webkit-box; border: 1px solid #000;}
-		.FixedL{ width: 3.125rem; height: 1.5625rem; background: yellow; }
-		.FixedR{ -webkit-box-flex: 1; background: red; }
+		.FixedL{ width: 3.125rem; line-height: 1.5625rem; background: yellow; text-align: center;}
+		.FixedR{ -webkit-box-flex: 1; line-height: 1.5625rem; background: red; text-align: center;}
 
 		/*摇一摇*/
-		.Shake{ display: block; width: 3.125rem; height: 3.125rem; margin: 20px auto; border: 1px solid #000; background: red; }
+		.Shake{ display: block; width: 3.125rem; height: 3.125rem; margin: 0.3125rem auto; border: 0.015625rem solid #000; background: red; text-align: center; line-height: 3.125rem; }
 
 	</style>
 </head>
@@ -27,16 +27,16 @@
 
 <!-- 弹性 -->
 <div class="flexible">
-	<span>111</span>
-	<span>222</span>
-	<span>333</span>
-	<span>444</span>
+	<span>弹</span>
+	<span>性</span>
+	<span>盒</span>
+	<span>子</span>
 </div>
 
 <!-- 左侧固定 右侧自适应 -->
 <div class="Fixedwidth">
-	<div class="FixedL"></div>
-	<div class="FixedR"></div>
+	<div class="FixedL">固宽</div>
+	<div class="FixedR">自适应</div>
 </div>
 
 <!-- 摇一摇 -->
